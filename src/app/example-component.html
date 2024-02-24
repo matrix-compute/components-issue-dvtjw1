@@ -1,0 +1,31 @@
+<mat-toolbar color="primary">
+  Angular Material App
+</mat-toolbar>
+<button mat-raised-button
+  (click)="click()">
+  emitEvent: false
+</button>
+<form
+  [formGroup]="formGroup" style="display: flex; flex-direction: column">
+  <mat-form-field appearance="fill">
+    <mat-date-range-input [rangePicker]="rangePicker">
+      <input formControlName="start" autocomplete="off" matStartDate placeholder="Start">
+      <input formControlName="end" autocomplete="off" matEndDate placeholder="End">
+    </mat-date-range-input>
+    <mat-datepicker-toggle matSuffix [for]="rangePicker">
+    </mat-datepicker-toggle>
+    <mat-date-range-picker
+      #rangePicker startView="year">
+    </mat-date-range-picker>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <input matInput formControlName="input">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select formControlName="select">
+      <mat-option value="optionvalue">
+        Option
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>
